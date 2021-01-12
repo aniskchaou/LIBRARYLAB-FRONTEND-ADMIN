@@ -1,5 +1,125 @@
 <div class="container-fluid">
+    <div class="card shadow mb-4">
 
+        <div class="card-body">
+            <button style="margin: 3px;" type="button" href="#add" role="button" data-toggle="modal"
+                class="btn btn-success btn-sm"><i class="fas fa-plus"></i> Ajouter </button>
+
+            <button style="margin: 3px;" type="button" href="#import-csv" role="button" data-toggle="modal"
+                class="btn btn-primary btn-sm"><i class="fas fa-file-import"></i> Import</button>
+
+            <button style="margin: 3px;" type="button" role="button" class="btn btn-danger btn-sm"
+                (click)="showsummary = !showsummary"><i class="fas fa-crosshairs"></i> Sommaire</button>
+
+            <span style="margin: 3px;" class="dropdown">
+
+                <button class="btn btn-warning dropdown-toggle btn-sm" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-columns"></i> Monter/Cacher
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item toggle-vis" href="" data-column="0">Nom</a> <br>
+                    <a class="dropdown-item toggle-vis" href="" data-column="1">Email</a>
+
+                </div>
+            </span>
+
+            <button style="margin: 3px;" type="button" role="button" (click)="showgraphic = !showgraphic"
+                class="btn btn-info btn-sm"><i class="fas fa-chart-line"></i> Analyse</button>
+            <br><br>
+
+            <div *ngIf="showgraphic">
+              En cours de dévéloppment 
+            </div>
+
+            <div *ngIf="showsummary">
+                <div class="row">
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Livres</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">400</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                           Membres</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Catégories
+                                        </div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50</div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="progress progress-sm mr-2">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Pending Requests Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Allocation</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+            </div>
+        </div>
+    </div>
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Livres</h1>
   
@@ -8,7 +128,7 @@
        
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table id="table" class="table table-bordered"  width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -46,13 +166,81 @@
                             <td>2020</td>
                              <td>T24/11/2020</td>
                             <td>Disponible</td>
-                            <td><button class="btn btn-primary">voir</button>
-                                <button class="btn btn-warning">editer</button>
-                                <button class="btn btn-danger">supprimer</button></td>
+                            <td>
+                            <button href="#edit" role="button" data-toggle="modal" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </td>
                        
                         </tr> 
                     </tbody>
                 </table>
+
+                <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        <app-add-book></app-add-book>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        <app-edit-book></app-edit-book>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="modal fade" id="import-csv" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="file"> <button type="button" role="button" class="btn btn-primary btn-sm"><i
+                                class="fas fa-file-import"></i> Import</button>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                
+
+                
             </div>
         </div>
     </div>

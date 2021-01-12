@@ -1,0 +1,291 @@
+<form class="form-horizontal" action="https://xeroneit.co/demo/lms/admin/add_book_action" enctype="multipart/form-data" method="POST">
+    <div class="box-body">
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ISBN   
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="isbn" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Titre *
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="title" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sous-titre  
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="subtitle" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Auteur *
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="author" value="" class="form-control" type="text">		               
+                <span class="red"></span>
+            </div>
+        </div>	
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Édition *
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="edition" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Année d'édition 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="edition_year" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre de copies *
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input type="number" min="1" name="number_of_books" value="1" class="form-control">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Image de couverture </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input id="photo" name="photo" class="form-control" type="file" value="">
+                <span class="blue"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dimension Max: 1200 X 2000 </font></font></span><br>
+                <span class="blue"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Taille Max: 1024KB Format: jpg, png</font></font></span><br>
+                <!-- <span class="red"></span> -->
+                <span class="red"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Forme physique  
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <select name="physical_form" class="form-control" id="physical_form">
+<option value="Book"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Livre</font></font></option>
+<option value="Journal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Journal</font></font></option>
+<option value="CD/DVD"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CD / DVD</font></font></option>
+<option value="Manuscript"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Manuscrit</font></font></option>
+<option value="Others"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Autres</font></font></option>
+<option value="" selected="selected"></option>
+</select>
+          
+                <span class="red"></span>
+            </div>
+        </div> 
+                            
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Éditeur  
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="publisher" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div> 
+
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Séries 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="series" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Taille 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <select name="size1" class="form-control" id="size1">
+<option value="Medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Moyen</font></font></option>
+<option value="Large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Grand</font></font></option>
+<option value="Huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Énorme</font></font></option>
+<option value="Small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Petit</font></font></option>
+<option value="Tiny"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Minuscule</font></font></option>
+<option value="" selected="selected"></option>
+</select>
+          
+                <span class="red"></span>
+            </div>
+        </div>  
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prix 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="price" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Appelez non 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="call_no" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Emplacement 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="location" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Page d'indices 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="clue_page" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Catégorie de livre 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">		    
+                <input name="cat[]" type="checkbox" value="517"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> aayxcyxc</font></font><br><input name="cat[]" type="checkbox" value="518"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> tester</font></font><br><input name="cat[]" type="checkbox" value="519"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> n</font></font><br><input name="cat[]" type="checkbox" value="521"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Inde</font></font><br><input name="cat[]" type="checkbox" value="522"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> L'amour</font></font><br><input name="cat[]" type="checkbox" value="523"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> drame</font></font><br><input name="cat[]" type="checkbox" value="524"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> noms</font></font><br><input name="cat[]" type="checkbox" value="525"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> jf</font></font><br><input name="cat[]" type="checkbox" value="529"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> l'amour</font></font><br><input name="cat[]" type="checkbox" value="530"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> tester</font></font><br><input name="cat[]" type="checkbox" value="531"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Le marketing numérique</font></font><br><input name="cat[]" type="checkbox" value="532"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Article</font></font><br><input name="cat[]" type="checkbox" value="533"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> article- ASEAN</font></font><br><input name="cat[]" type="checkbox" value="534"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Ali</font></font><br><input name="cat[]" type="checkbox" value="535"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Wetyy</font></font><br><input name="cat[]" type="checkbox" value="536"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Animal</font></font><br><input name="cat[]" type="checkbox" value="537"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Foresterie 1</font></font><br><input name="cat[]" type="checkbox" value="538"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> L'informatique</font></font><br><input name="cat[]" type="checkbox" value="539"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Social</font></font><br><input name="cat[]" type="checkbox" value="540"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Social</font></font><br><input name="cat[]" type="checkbox" value="541"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> dosj</font></font><br><input name="cat[]" type="checkbox" value="542"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Alan</font></font><br><input name="cat[]" type="checkbox" value="543"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Bia Banda</font></font><br><input name="cat[]" type="checkbox" value="544"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Rhea Chakrobarty est ici</font></font><br><input name="cat[]" type="checkbox" value="545"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Bal</font></font><br><input name="cat[]" type="checkbox" value="546"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> La physique</font></font><br><input name="cat[]" type="checkbox" value="547"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> fantaisie</font></font><br><input name="cat[]" type="checkbox" value="549"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Anglais</font></font><br><input name="cat[]" type="checkbox" value="551"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> récit </font></font><br><input name="cat[]" type="checkbox" value="552"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> livre sacré</font></font><br><input name="cat[]" type="checkbox" value="553"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Thể loại</font></font><br><input name="cat[]" type="checkbox" value="554"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> xxx</font></font><br><input name="cat[]" type="checkbox" value="555"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Récit</font></font><br><input name="cat[]" type="checkbox" value="556"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> xyz</font></font><br><input name="cat[]" type="checkbox" value="557"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> livre11</font></font><br><input name="cat[]" type="checkbox" value="558"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 333</font></font><br><input name="cat[]" type="checkbox" value="562"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> "&gt;</font></font><img src="" ><br><input name="cat[]" type="checkbox" value="563"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> "&gt;</font></font><img src="" ><br><input name="cat[]" type="checkbox" value="564"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> &gt;</font></font><img src="" ><br><input name="cat[]" type="checkbox" value="565"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> expert</font></font><br>       		             		             		 	          
+                <span class="red"></span>
+            </div>		             
+        </div> 
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Éditeur 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="editor" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Année de publication 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="publishing_year" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lieu de publication 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="publication_place" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pages totales 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="number_of_pages" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+        
+
+        <!-- <div class="form-group">
+            <label class="col-sm-3 control-label" >Dues
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="dues" value=""  class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>  -->
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Source du livre 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <select name="source_details" class="form-control" id="source_details">
+<option value="Local Purchase"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Achat local</font></font></option>
+<option value="University"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Université</font></font></option>
+<option value="World Bank Donation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Don de la Banque mondiale</font></font></option>
+<option value="Personal Donation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Don personnel</font></font></option>
+<option value="Others"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Autres</font></font></option>
+<option value="" selected="selected"></option>
+</select>
+          
+                <span class="red"></span>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Remarques 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="notes" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Version pdf / epub - Si disponible </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input id="pdf" name="pdf" class="form-control" type="file" value="">
+                <span class="red"></span>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OU</font></font></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lien pdf / epub - Si disponible 
+            </font></font></label>
+            <div class="col-sm-9 col-md-6 col-lg-6">
+                <input name="link" value="" class="form-control" type="text">		          
+                <span class="red"></span>
+            </div>
+        </div>
+
+
+    </div> <!-- /.box-body --> 
+    <div class="box-footer">
+        <div class="form-group">
+            <div class="col-sm-12 text-center">
+                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input name="submit" type="submit" class="btn btn-warning btn-lg" value="Sauvegarder "></font></font>  
+                <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="button" class="btn btn-default btn-lg" value="Annuler" onclick="goBack(&quot;admin/book_list&quot;)"></font></font>  
+            </div>
+        </div>
+    </div><!-- /.box-footer -->         
+</form>

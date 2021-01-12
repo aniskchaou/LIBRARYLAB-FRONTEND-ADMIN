@@ -19,6 +19,14 @@ import { PenaltyComponent } from './penalty/penalty.component';
 import { CategoryComponent } from './category/category.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
+import { AddBookComponent } from './add-book/add-book.component';
+import { AddTypeMemberComponent } from './add-type-member/add-type-member.component';
+import { EditTypeMemberComponent } from './edit-type-member/edit-type-member.component';
+import { EditMemberComponent } from './edit-member/edit-member.component';
+import { AddMemberComponent } from './add-member/add-member.component';
 
 const routes:Routes=[
   {path:'book',component:BookComponent},
@@ -55,7 +63,15 @@ const routes:Routes=[
     PenaltyComponent,
     CategoryComponent,
     DashboardComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    AddCategoryComponent,
+    EditCategoryComponent,
+    EditBookComponent,
+    AddBookComponent,
+    AddTypeMemberComponent,
+    EditTypeMemberComponent,
+    EditMemberComponent,
+    AddMemberComponent
     
   ],
   imports: [
