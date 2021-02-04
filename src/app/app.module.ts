@@ -6,27 +6,31 @@ import { NavigationComponent } from './template/navigation/navigation.component'
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 
-import { BookComponent } from './book/book.component';
-import { TypeMemberComponent } from './type-member/type-member.component';
-import { MemberComponent } from './member/member.component';
-import { ConfigurationReturnComponent } from './configuration-return/configuration-return.component';
-import { ReturnBookComponent } from './return-book/return-book.component';
-import { ConfigurationSMSComponent } from './configuration-sms/configuration-sms.component';
-import { DailyBookComponent } from './daily-book/daily-book.component';
-import { ContactComponent } from './contact/contact.component';
-import { RequiredBookComponent } from './required-book/required-book.component';
-import { PenaltyComponent } from './penalty/penalty.component';
-import { CategoryComponent } from './category/category.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ConfigurationComponent } from './configuration/configuration.component';
-import { AddCategoryComponent } from './add-category/add-category.component';
-import { EditCategoryComponent } from './edit-category/edit-category.component';
-import { EditBookComponent } from './edit-book/edit-book.component';
-import { AddBookComponent } from './add-book/add-book.component';
-import { AddTypeMemberComponent } from './add-type-member/add-type-member.component';
-import { EditTypeMemberComponent } from './edit-type-member/edit-type-member.component';
-import { EditMemberComponent } from './edit-member/edit-member.component';
-import { AddMemberComponent } from './add-member/add-member.component';
+
+import { TypeMemberComponent } from './modules/typemember/type-member/type-member.component';
+import { MemberComponent } from './modules/memberr/member/member.component';
+
+import { ReturnBookComponent } from './modules/return-book/return-book.component';
+
+import { RequiredBookComponent } from './modules/required-book/required-book.component';
+import { PenaltyComponent } from './modules/penalty/penalty.component';
+import { BookComponent } from './modules/book/book/book.component';
+import { AddTypeMemberComponent } from './modules/add-type-member/add-type-member.component';
+import { AddBookComponent } from './modules/book/add-book/add-book.component';
+import { EditBookComponent } from './modules/book/edit-book/edit-book.component';
+import { AddCategoryComponent } from './modules/category/add-category/add-category.component';
+import { CategoryComponent } from './modules/category/category/category.component';
+import { EditCategoryComponent } from './modules/category/edit-category/edit-category.component';
+import { ConfigurationReturnComponent } from './modules/configuration-return/configuration-return.component';
+import { ConfigurationSMSComponent } from './modules/configuration-sms/configuration-sms.component';
+import { ContactComponent } from './modules/contact/contact.component';
+import { DailyBookComponent } from './modules/daily-book/daily-book.component';
+import { AddMemberComponent } from './modules/memberr/add-member/add-member.component';
+import { EditMemberComponent } from './modules/memberr/edit-member/edit-member.component';
+import { ConfigurationComponent } from './modules/shared/configuration/configuration.component';
+import { DashboardComponent } from './modules/shared/dashboard/dashboard.component';
+import { EditTypeMemberComponent } from './modules/typemember/edit-type-member/edit-type-member.component';
+
 
 const routes:Routes=[
   {path:'book',component:BookComponent},

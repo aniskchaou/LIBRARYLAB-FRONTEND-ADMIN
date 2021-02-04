@@ -44,6 +44,7 @@ private loadScripts() {
   title = 'my-app-angular';
 
   ngOnInit() {
-   this.loadScripts();
+    this.loadScripts();
+    //super.show('Library Lab', 'cette application est en cours de développement.', 'info')
   }
 }
