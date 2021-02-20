@@ -16,4 +16,8 @@ export class RequiredBookComponent extends URLLoader implements OnInit {
     super.loadScripts()
   }
 
+  resolve() {
+    super.show('Information', 'cette fonctionalités est en cours de développement.', 'info')
+  }
+
 }

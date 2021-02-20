@@ -29,7 +29,7 @@
             <br><br>
 
             <div *ngIf="showgraphic">
-              En cours de dévéloppment 
+                En cours de dévéloppment
             </div>
 
             <div *ngIf="showsummary">
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                     </div>
-                
+
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-success shadow h-100 py-2">
@@ -60,7 +60,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                           Membres</div>
+                                            Membres</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
                                     </div>
                                     <div class="col-auto">
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                
+
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-info shadow h-100 py-2">
@@ -85,7 +85,9 @@
                                             </div>
                                             <div class="col">
                                                 <div class="progress progress-sm mr-2">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                
+
                     <!-- Pending Requests Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-warning shadow h-100 py-2">
@@ -116,19 +118,19 @@
                         </div>
                     </div>
                 </div>
-                 
+
             </div>
         </div>
     </div>
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Livres</h1>
-  
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-       
+
         <div class="card-body">
             <div class="table-responsive">
-                <table id="table" class="table table-bordered"  width="100%" cellspacing="0">
+                <table id="table" class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -157,90 +159,112 @@
                         </tr>
                     </tfoot>
                     <tbody>
+                        <tr *ngFor="let b of books$">
+                            <td>{{b.id}}</td>
+                            <td>{{b.isbn}}</td>
+                            <td>{{b.title}}</td>
+                            <td>{{b.author}}</td>
+                            <td>{{b.edition}}</td>
+                            <td>{{b.year_edition}}</td>
+                            <td>{{b.date}}</td>
+                            <td>Disponible</td>
+                            <td>
+                                <button href="#edit" role="button" data-toggle="modal" class="btn btn-warning btn-sm"><i
+                                        class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+                                        class="fas fa-trash-alt"></i></button>
+                            </td>
+
+                        </tr>
                         <tr>
                             <td>1</td>
                             <td>9782330119478</td>
                             <td>VIVRE AVEC LA TERRE</td>
-                             <td>Charles et Perrine Hervé-Gruyer</td>
+                            <td>Charles et Perrine Hervé-Gruyer</td>
                             <td>Editions Actes Sud</td>
                             <td>2020</td>
-                             <td>T24/11/2020</td>
+                            <td>T24/11/2020</td>
                             <td>Disponible</td>
                             <td>
-                            <button href="#edit" role="button" data-toggle="modal" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger btn-sm"
-                                onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
-                                    class="fas fa-trash-alt"></i></button>
-                        </td>
-                       
-                        </tr> 
+                                <button href="#edit" role="button" data-toggle="modal" class="btn btn-warning btn-sm"><i
+                                        class="fas fa-edit"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet employé ?');"><i
+                                        class="fas fa-trash-alt"></i></button>
+                            </td>
+
+                        </tr>
                     </tbody>
                 </table>
 
-                <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                        <app-add-book></app-add-book>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <app-add-book></app-add-book>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 
-                  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                        <app-edit-book></app-edit-book>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <app-edit-book></app-edit-book>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 
-                  <div class="modal fade" id="import-csv" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="import-csv" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <input type="file"> <button type="button" role="button" class="btn btn-primary btn-sm"><i
-                                class="fas fa-file-import"></i> Import</button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="file"> <button type="button" role="button"
+                                    class="btn btn-primary btn-sm"><i class="fas fa-file-import"></i> Import</button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
 
-                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
     </div>

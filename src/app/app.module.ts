@@ -15,7 +15,7 @@ import { ReturnBookComponent } from './modules/return-book/return-book.component
 import { RequiredBookComponent } from './modules/required-book/required-book.component';
 import { PenaltyComponent } from './modules/penalty/penalty.component';
 import { BookComponent } from './modules/book/book/book.component';
-import { AddTypeMemberComponent } from './modules/add-type-member/add-type-member.component';
+import { AddTypeMemberComponent } from './modules/typemember/add-type-member/add-type-member.component';
 import { AddBookComponent } from './modules/book/add-book/add-book.component';
 import { EditBookComponent } from './modules/book/edit-book/edit-book.component';
 import { AddCategoryComponent } from './modules/category/add-category/add-category.component';
@@ -30,25 +30,26 @@ import { EditMemberComponent } from './modules/memberr/edit-member/edit-member.c
 import { ConfigurationComponent } from './modules/shared/configuration/configuration.component';
 import { DashboardComponent } from './modules/shared/dashboard/dashboard.component';
 import { EditTypeMemberComponent } from './modules/typemember/edit-type-member/edit-type-member.component';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-const routes:Routes=[
-  {path:'book',component:BookComponent},
-  {path:'type',component:TypeMemberComponent},
-  {path:'category',component:CategoryComponent},
-  {path:'member',component:MemberComponent},
-  {path:'return',component:ReturnBookComponent},
-  {path:'member',component:MemberComponent},
-  {path:'dailybook',component:DailyBookComponent},
-  {path:'contact',component:ContactComponent},
-  {path:'requiredbook',component:RequiredBookComponent},
-  {path:'penalty',component:PenaltyComponent},
-  {path:'configuration',component:ConfigurationComponent},
-  {path:'configurationreturn',component:ConfigurationReturnComponent},
-  {path:'configurationsms',component:ConfigurationSMSComponent},
-  {path:'dashboard',component:DashboardComponent},
-  {path:'',redirectTo:'dashboard',pathMatch:'full'},
-  {path:'**',redirectTo:'dashboard',pathMatch:'full'}]
+const routes: Routes = [
+  { path: 'book', component: BookComponent },
+  { path: 'type', component: TypeMemberComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'member', component: MemberComponent },
+  { path: 'return', component: ReturnBookComponent },
+  { path: 'member', component: MemberComponent },
+  { path: 'dailybook', component: DailyBookComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'requiredbook', component: RequiredBookComponent },
+  { path: 'penalty', component: PenaltyComponent },
+  { path: 'configuration', component: ConfigurationComponent },
+  { path: 'configurationreturn', component: ConfigurationReturnComponent },
+  { path: 'configurationsms', component: ConfigurationSMSComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }]
 
 
 @NgModule({
@@ -76,13 +77,15 @@ const routes:Routes=[
     EditTypeMemberComponent,
     EditMemberComponent,
     AddMemberComponent
-    
+
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: ''}],
+  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

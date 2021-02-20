@@ -8,7 +8,7 @@ import URLS from '../urls/urls';
     providedIn: 'root'
 })
 
-export class OfService implements Service {
+export class HTTPService implements Service {
 
     headers = { 'content-type': 'application/json' }
 

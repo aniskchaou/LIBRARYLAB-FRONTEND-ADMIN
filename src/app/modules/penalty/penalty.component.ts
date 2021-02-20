@@ -16,4 +16,12 @@ export class PenaltyComponent extends URLLoader implements OnInit {
     super.loadScripts()
   }
 
+  sendSMS() {
+    super.show('Information', 'cette fonctionalités est en cours de développement.', 'info')
+  }
+
+  sendEmail() {
+    super.show('Information', 'cette fonctionalités est en cours de développement.', 'info')
+  }
+
 }

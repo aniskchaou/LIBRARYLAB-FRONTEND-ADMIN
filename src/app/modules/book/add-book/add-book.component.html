@@ -1,5 +1,4 @@
-<form class="form-horizontal" enctype="multipart/form-data"
-    method="POST">
+<form class="form-horizontal" enctype="multipart/form-data" [formGroup]="bookForm" method="POST">
     <div class="box-body">
 
         <div class="form-group">
@@ -9,9 +8,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="isbn" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.isbn.errors }" formControlName="isbn" name="isbn"
+                    value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.isbn.errors">
+                    {{msg.validationMessage.isbn}}</div>
             </div>
         </div>
 
@@ -23,9 +24,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="title" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.title.errors }" formControlName="title" name="title"
+                    value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.title.errors">
+                    {{msg.validationMessage.title}}</div>
             </div>
         </div>
 
@@ -36,9 +39,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="subtitle" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.subtitle.errors }" formControlName="subtitle"
+                    name="subtitle" value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.subtitle.errors">
+                    {{msg.validationMessage.subtitle}}</div>
             </div>
         </div>
 
@@ -49,9 +54,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="author" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.author.errors }" formControlName="author" name="author"
+                    value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.author.errors">
+                    {{msg.validationMessage.author}}</div>
             </div>
         </div>
 
@@ -62,9 +69,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="edition" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.edition.errors }" formControlName="edition"
+                    name="edition" value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.edition.errors">
+                    {{msg.validationMessage.edition}}</div>
             </div>
         </div>
 
@@ -75,9 +84,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="edition_year" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.edition_year.errors }" formControlName="edition_year"
+                    name="edition_year" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.edition_year.errors">
+                    {{msg.validationMessage.edition_year}}</div>
             </div>
         </div>
 
@@ -88,9 +99,12 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input type="number" min="1" name="number_of_books" value="1" class="form-control">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.number_of_books.errors }"
+                    formControlName="number_of_books" type="number" min="1" name="number_of_books" value="1"
+                    class="form-control">
+                <div class="alert alert-danger" *ngIf="submitted && f.number_of_books.errors">
+                    {{msg.validationMessage.number_of_books}}</div>
             </div>
         </div>
 
@@ -100,8 +114,9 @@
                     <font style="vertical-align: inherit;">Image de couverture </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input id="photo" name="photo" class="form-control" type="file" value="">
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.photo.errors }" formControlName="photo" id="photo"
+                    name="photo" class="form-control" type="file" value="">
                 <span class="blue">
                     <font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">Dimension Max: 1200 X 2000 </font>
@@ -112,8 +127,9 @@
                         <font style="vertical-align: inherit;">Taille Max: 1024KB Format: jpg, png</font>
                     </font>
                 </span><br>
-                <!-- <span class="red"></span> -->
-                <span class="red"></span>
+                <!-- <div class="alert alert-danger"  *ngIf="submitted && f.supplier.errors">
+                            {{msg.validationMessage.supplier}}</div> -->
+
             </div>
         </div>
 
@@ -125,8 +141,9 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <select name="physical_form" class="form-control" id="physical_form">
+            <div class="col-md-12">
+                <select [ngClass]="{ 'is-invalid': submitted && f.physical_form.errors }"
+                    formControlName="physical_form" name="physical_form" class="form-control" id="physical_form">
                     <option value="Book">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">Livre</font>
@@ -155,7 +172,8 @@
                     <option value="" selected="selected"></option>
                 </select>
 
-                <span class="red"></span>
+                <div class="alert alert-danger" *ngIf="submitted && f.physical_form.errors">
+                    {{msg.validationMessage.physical_form}}</div>
             </div>
         </div>
 
@@ -167,9 +185,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="publisher" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.publisher.errors }" formControlName="publisher"
+                    name="publisher" value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.publisher.errors">
+                    {{msg.validationMessage.publisher}}</div>
             </div>
         </div>
 
@@ -182,9 +202,12 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="series" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.series.errors }" formControlName="series" name="series"
+                    class="form-control" type="text">
+
+                <div class="alert alert-danger" *ngIf="submitted && f.series.errors">
+                    {{msg.validationMessage.series}}</div>
             </div>
         </div>
 
@@ -195,8 +218,9 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <select name="size1" class="form-control" id="size1">
+            <div class="col-md-12">
+                <select [ngClass]="{ 'is-invalid': submitted && f.size.errors }" formControlName="size" name="size"
+                    class="form-control" id="size1">
                     <option value="Medium">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">Moyen</font>
@@ -225,7 +249,8 @@
                     <option value="" selected="selected"></option>
                 </select>
 
-                <span class="red"></span>
+                <div class="alert alert-danger" *ngIf="submitted && f.size.errors">
+                    {{msg.validationMessage.size}}</div>
             </div>
         </div>
 
@@ -236,22 +261,26 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="price" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.price.errors }" formControlName="price" name="price"
+                    value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.price.errors">
+                    {{msg.validationMessage.price}}</div>
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-sm-3 control-label">
                 <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Appelez non
+                    <font style="vertical-align: inherit;">Téléphone
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="call_no" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.call_no.errors }" formControlName="call_no"
+                    name="call_no" value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.call_no.errors">
+                    {{msg.validationMessage.call_no}}</div>
             </div>
         </div>
 
@@ -262,9 +291,12 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="location" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.location.errors }" formControlName="location"
+                    name="location" value="" class="form-control" type="text">
+
+                <div class="alert alert-danger" *ngIf="submitted && f.location.errors">
+                    {{msg.validationMessage.location}}</div>
             </div>
         </div>
 
@@ -275,9 +307,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="clue_page" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.clue_page.errors }" formControlName="clue_page"
+                    name="clue_page" value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.clue_page.errors">
+                    {{msg.validationMessage.clue_page}}</div>
             </div>
         </div>
 
@@ -289,19 +323,19 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="cat[]" type="checkbox" value="517">
+            <div class="col-md-12">
+                <input name="cat" type="checkbox" value="517">
 
                 <font style="vertical-align: inherit;"> drame</font>
-                <br><input name="cat[]" type="checkbox" value="524">
+                <br><input name="cat" type="checkbox" value="524">
 
                 <font style="vertical-align: inherit;"> Le marketing numérique</font>
-                <br><input name="cat[]" type="checkbox" value="532">
+                <br><input name="cat" type="checkbox" value="532">
 
                 <font style="vertical-align: inherit;"> Récit</font>
-                <br><input name="cat[]" type="checkbox" value="556">
+                <br><input name="cat" type="checkbox" value="556">
 
-                <span class="red"></span>
+
             </div>
         </div>
 
@@ -312,9 +346,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="editor" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.editor.errors }" formControlName="editor" name="editor"
+                    value="" class="form-control" type="text">
+                <div class="alert alert-danger" class="alert alert-danger" *ngIf="submitted && f.editor.errors">
+                    {{msg.validationMessage.editor}}</div>
             </div>
         </div>
 
@@ -326,9 +362,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="publishing_year" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.publishing_year.errors }"
+                    formControlName="publishing_year" name="publishing_year" value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.publishing_year.errors">
+                    {{msg.validationMessage.publishing_year}}</div>
             </div>
         </div>
 
@@ -339,9 +377,12 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="publication_place" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.publication_place.errors }"
+                    formControlName="publication_place" name="publication_place" value="" class="form-control"
+                    type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.publication_place.errors">
+                    {{msg.validationMessage.publication_place}}</div>
             </div>
         </div>
 
@@ -352,22 +393,18 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="number_of_pages" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.number_of_pages.errors }"
+                    formControlName="number_of_pages" name="number_of_pages" value="" class="form-control" type="text">
+
+                <div class="alert alert-danger" *ngIf="submitted && f.number_of_pages.errors">
+                    {{msg.validationMessage.number_of_pages}}</div>
             </div>
         </div>
 
 
 
-        <!-- <div class="form-group">
-            <label class="col-sm-3 control-label" >Dues
-            </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="dues" value=""  class="form-control" type="text">		          
-                <span class="red"></span>
-            </div>
-        </div>  -->
+
 
         <div class="form-group">
             <label class="col-sm-3 control-label">
@@ -376,8 +413,9 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <select name="source_details" class="form-control" id="source_details">
+            <div class="col-md-12">
+                <select [ngClass]="{ 'is-invalid': submitted && f.source_details.errors }"
+                    formControlName="source_details" name="source_details" class="form-control" id="source_details">
                     <option value="Local Purchase">
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">Achat local</font>
@@ -406,7 +444,8 @@
                     <option value="" selected="selected"></option>
                 </select>
 
-                <span class="red"></span>
+                <div class="alert alert-danger" *ngIf="submitted && f.source_details.errors">
+                    {{msg.validationMessage.source_details}}</div>
             </div>
         </div>
 
@@ -417,9 +456,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="notes" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.notes.errors }" formControlName="notes" name="notes"
+                    value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.notes.errors">
+                    {{msg.validationMessage.notes}}</div>
             </div>
         </div>
 
@@ -427,26 +468,20 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">
                 <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Version pdf / epub - Si disponible </font>
+                    <font style="vertical-align: inherit;">Version pdf </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input id="pdf" name="pdf" class="form-control" type="file" value="">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.pdf.errors }" formControlName="pdf" id="pdf" name="pdf"
+                    class="form-control" type="file" value="">
+                <div class="alert alert-danger" *ngIf="submitted && f.pdf.errors">
+                    {{msg.validationMessage.pdf}}</div>
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="col-sm-3 control-label">
-            </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <span>
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">OU</font>
-                    </font>
-                </span>
-            </div>
-        </div>
+
+
+
 
         <div class="form-group">
             <label class="col-sm-3 control-label">
@@ -455,9 +490,11 @@
                     </font>
                 </font>
             </label>
-            <div class="col-sm-9 col-md-6 col-lg-6">
-                <input name="link" value="" class="form-control" type="text">
-                <span class="red"></span>
+            <div class="col-md-12">
+                <input [ngClass]="{ 'is-invalid': submitted && f.link.errors }" formControlName="link" name="link"
+                    value="" class="form-control" type="text">
+                <div class="alert alert-danger" *ngIf="submitted && f.link.errors">
+                    {{msg.validationMessage.link}}</div>
             </div>
         </div>
 
