@@ -31,6 +31,14 @@ import { ConfigurationComponent } from './modules/shared/configuration/configura
 import { DashboardComponent } from './modules/shared/dashboard/dashboard.component';
 import { EditTypeMemberComponent } from './modules/typemember/edit-type-member/edit-type-member.component';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './template/footer/footer.component';
+import { TopbarComponent } from './template/topbar/topbar.component';
+import { ModalMemberComponent } from './modules/memberr/modal-member/modal-member.component';
+import { ModalTypeMemberComponent } from './modules/typemember/modal-type-member/modal-type-member.component';
+import { ModalBookComponent } from './modules/book/modal-book/modal-book.component';
+import { ModalCategoryComponent } from './modules/category/modal-category/modal-category.component';
+import { StatisticsBookComponent } from './modules/book/statistics-book/statistics-book.component';
+import { StatisticMemberComponent } from './modules/memberr/statistic-member/statistic-member.component';
 
 
 const routes: Routes = [
@@ -76,7 +84,16 @@ const routes: Routes = [
     AddTypeMemberComponent,
     EditTypeMemberComponent,
     EditMemberComponent,
-    AddMemberComponent
+    AddMemberComponent,
+    FooterComponent,
+    TopbarComponent,
+    ModalMemberComponent,
+    ModalTypeMemberComponent,
+    ModalBookComponent,
+    ModalCategoryComponent,
+    StatisticsBookComponent,
+    StatisticMemberComponent
+
 
   ],
   imports: [

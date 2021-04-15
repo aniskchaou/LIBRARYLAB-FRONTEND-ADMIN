@@ -1,6 +1,6 @@
 
 
-export default class Buy {
+export default class Category {
     id: number
     category_name: string
 

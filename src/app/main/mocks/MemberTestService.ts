@@ -7,7 +7,12 @@ import Service from "../interfaces/Service";
 })
 export default class MemberTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _member = []
+    _member = [{
+        "id": 1, "name": "KCHAOU Anis", "type_id": "Tuteur",
+        "email": "kchaou.anis@gmail.com", "mobile": "12312323",
+        "address": "60 avenue de colmar", "user_type": "", "password": "", "status": ""
+    }]
+
     static id = 0
 
     public getAll() {
@@ -32,7 +37,9 @@ export default class MemberTestService implements Service {
     };
 
     public remove(id) {
-        this._member.splice(id, 1);
+        var member = this.get(id);
+
+        this._member.splice(this._member.indexOf(member), 1);
     };
 
 

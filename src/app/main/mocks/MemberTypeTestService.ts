@@ -8,7 +8,7 @@ import Service from "../interfaces/Service";
 export default class MemberTypeTestService implements Service {
 
     public ID = new BehaviorSubject<string>(null);
-    _memberType = []
+    _memberType = [{ "id": 1, "member_type_name": "Auteur" }]
     static id = 0
 
     public getAll() {
@@ -33,7 +33,8 @@ export default class MemberTypeTestService implements Service {
     };
 
     public remove(id) {
-        this._memberType.splice(id, 1);
+        var memberType = this.get(id);
+        this._memberType.splice(this._memberType.indexOf(memberType), 1);
     };
 
 

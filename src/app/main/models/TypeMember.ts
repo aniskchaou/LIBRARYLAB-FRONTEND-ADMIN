@@ -1,6 +1,6 @@
 
 
-export default class Buy {
+export default class TypeMember {
     id: number
     member_type_name: string
 

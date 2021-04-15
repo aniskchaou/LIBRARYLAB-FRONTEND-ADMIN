@@ -4,6 +4,7 @@ import BookMessage from 'src/app/main/messages/BookMessage';
 import BookTestService from 'src/app/main/mocks/BookTestService';
 import Book from 'src/app/main/models/Book';
 
+
 @Component({
   selector: 'app-edit-book',
   templateUrl: './edit-book.component.html',
@@ -14,7 +15,7 @@ export class EditBookComponent extends URLLoader implements OnInit {
   model: Book = new Book(0, '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '')
 
-  constructor(private categoryTestService:
+  constructor(private bookTestService:
     BookTestService,
     private message: BookMessage) {
     super()
@@ -25,8 +26,8 @@ export class EditBookComponent extends URLLoader implements OnInit {
 
   ngOnInit(): void {
 
-    this.categoryTestService.ID.subscribe(idd => {
-      this.model = this.categoryTestService.get(idd)
+    this.bookTestService.ID.subscribe(idd => {
+      this.model = this.bookTestService.get(idd)
       if (this.model == undefined) {
         this.model = new Book(0, '', '', '', '', '',
           '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '')
@@ -35,7 +36,7 @@ export class EditBookComponent extends URLLoader implements OnInit {
   }
 
   edit() {
-    this.categoryTestService.update(this.model)
+    this.bookTestService.update(this.model)
     super.show('Confirmation', this.message.confirmationMessages.edit, 'success')
   }
 

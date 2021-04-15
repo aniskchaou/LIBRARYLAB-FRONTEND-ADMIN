@@ -7,7 +7,7 @@ import Service from "../interfaces/Service";
 })
 export default class CategoryTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _category = []
+    _category = [{ "id": 1, "category_name": "science" }, { "id": 3, "category_name": "roman" }]
     static id = 0
 
     public getAll() {
@@ -31,7 +31,9 @@ export default class CategoryTestService implements Service {
     };
 
     public remove(id) {
-        this._category.splice(id, 1);
+        var category = this.get(id);
+
+        this._category.splice(this._category.indexOf(category), 1);
     };
 
 
